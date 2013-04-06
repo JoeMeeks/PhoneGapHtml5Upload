@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>iOS Media Uploader</title>
+        <meta charset="utf-8" />
+        <script src="cordova.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="http://cdn.kendostatic.com/2013.1.319/js/kendo.mobile.min.js"></script>
+        <link href="http://cdn.kendostatic.com/2013.1.319/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div data-role="view" id="home" data-title="Upload Media">
+            <h1>iOS Media Uploader</h1>
+            <div style="padding:20px;">
+                select file(s): 
+                <div style="margin:10px 0; border:1px solid #999; border-radius:5px;">
+                    <input id="fiMedia" type="file" accept="image/*, video/*" multiple onchange="mediaUpload(this)" />
+                    <div style="margin:5px; padding:2px; background:#CCC; text-align:center; line-height:12px">
+                        <progress min="0" max="100" value="0">0%</progress>
+                    </div>
+                </div>
+                <div style="text-align:right;">
+                    <button onclick="clearUpload()">Clear</button>    
+                </div>
+            </div>
+            
+        </div>
+
+        <script>
+            var app = new kendo.mobile.Application(document.body, { transition: "slide" });
+
+            function mediaUpload(input) {
+                var options = { repo: "temp" };
+                var xhr = $.ajaxSettings.xhr();
+                if (xhr.upload) {
+                    var progressBar = document.querySelector("progress");
+                    xhr.upload.addEventListener("progress", function (e) {
+                        var percentage = e.loaded / e.total;
+                        progressBar.value = percentage * 100;
+                        progressBar.textContent = Math.floor(percentage * 100) + "%";
+                    }, false);
+                }
+                provider = function () {
+                    return xhr;
+                };
+                var data = new FormData();
+                data.append("options", JSON.stringify(options));
+                for (var i = 0; i < input.files.length; i++) data.append(input.files[i].name, input.files[i]);
+                $.ajax({
+                    //url: "http://joemeeks.net/Upload.ashx",
+                    url: "/Upload.ashx",
+                    type: 'POST',
+                    xhr: provider,
+                    data: data,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function (e) {
+                        app.showLoading();
+                    },
+                    success: function (e) {
+                        alert("success: " + e);
+                    },
+                    error: function (e) {
+                        alert("failure: " + JSON.stringify(e));
+                    },
+                    complete: function (e) {
+                        app.hideLoading();
+                    }
+                });
+            }
+
+            function clearUpload() {
+                var progressBar = document.querySelector("progress");
+                progressBar.value = 0;
+                progressBar.textContent = "0%";
+                $("#fiMedia").val("");
+            }
+        </script>
+    </body>
+</html>
