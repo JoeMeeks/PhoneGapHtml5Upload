@@ -8,7 +8,7 @@
         <script src="http://cdn.kendostatic.com/2013.1.319/js/kendo.mobile.min.js"></script>
         <link href="http://cdn.kendostatic.com/2013.1.319/styles/kendo.mobile.all.min.css" rel="stylesheet" />
     </head>
-    <body>
+    <body onload="onBodyLoad()">
         <div data-role="view" id="home" data-title="Upload Media">
             <h1>iOS Media Uploader</h1>
             <div style="padding:20px;">
@@ -27,10 +27,8 @@
         </div>
 
         <script>
-            try {
-                var app = new kendo.mobile.Application(document.body, { transition: "slide" });
-
-                function mediaUpload(input) {
+            function mediaUpload(input) {
+                try {
                     var options = { repo: "temp" };
                     var xhr = $.ajaxSettings.xhr();
                     if (xhr.upload) {
@@ -68,16 +66,30 @@
                             app.hideLoading();
                         }
                     });
+                } catch (e) {
+                    alert(e.message);
                 }
+            }
 
-                function clearUpload() {
+            function clearUpload() {
+                try {
                     var progressBar = document.querySelector("progress");
                     progressBar.value = 0;
                     progressBar.textContent = "0%";
                     $("#fiMedia").val("");
+                } catch (e) {
+                    alert("device ready error: " + e.message);
                 }
-            } catch (e) {
-                alert(e.message);
+            }
+            function onBodyLoad() {
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+            function onDeviceReady() {
+                try {
+                    var app = new kendo.mobile.Application(document.body, { transition: "slide" });
+                } catch (e) {
+                    alert("device ready error: " + e.message);
+                }
             }
         </script>
     </body>
