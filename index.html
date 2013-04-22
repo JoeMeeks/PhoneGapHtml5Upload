@@ -27,6 +27,8 @@
         </div>
 
         <script>
+            var app = new kendo.mobile.Application(document.body, { transition: "slide" });
+
             function mediaUpload(input) {
                 try {
                     var options = { repo: "temp" };
@@ -86,7 +88,7 @@
             }
             function onDeviceReady() {
                 try {
-                    var app = new kendo.mobile.Application(document.body, { transition: "slide" });
+                    
                 } catch (e) {
                     alert("device ready error: " + e.message);
                 }

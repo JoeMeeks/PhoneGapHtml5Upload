@@ -20,6 +20,7 @@
   <gap:splash src="img/screens/ios/iphone-portrait.png" width="320"  height="480"  gap:platform="ios" />
 
   <feature name="http://api.phonegap.com/1.0/device" />
+  <feature name="http://api.phonegap.com/1.0/file" />
 
   <preference name="phonegap-version" value="2.5.0" />
   <preference name="orientation" value="portrait" />
