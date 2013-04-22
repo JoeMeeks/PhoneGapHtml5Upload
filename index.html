@@ -47,8 +47,7 @@
                 data.append("options", JSON.stringify(options));
                 for (var i = 0; i < input.files.length; i++) data.append(input.files[i].name, input.files[i]);
                 $.ajax({
-                    //url: "http://joemeeks.net/Upload.ashx",
-                    url: "/Upload.ashx",
+                    url: "http://joemeeks.net/Upload.ashx",
                     type: 'POST',
                     xhr: provider,
                     data: data,

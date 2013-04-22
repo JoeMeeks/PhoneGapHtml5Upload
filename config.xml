@@ -4,35 +4,31 @@
 	id="com.joemeeks.html5upload"
 	version="0.1.0">
 	<name>HTML5 Upload</name>
-	<description>Upload files in a PhoneGap app with an HTML5 file input and jQuery Ajax multi-part form post</description>
+	<description>Upload files in a PhoneGap app with an HTML5 file input and jQuery AJAX multi-part form post</description>
 	<author href="http://joemeeks.net" email="joemeeks@joemeeks.net">Joe Meeks</author>
-    
-    <icon src="img/icons/html5-57.png" width="57" height="57"  gap:platform="ios" />
-    <icon src="img/icons/html5-72.png" width="72" height="72" gap:platform="ios" gap:role="default" />
-    <icon src="img/icons/html5-96.png" width="96" height="96" gap:platform="ios" />
-    <icon src="img/icons/html5-114.png" width="114" height="114" gap:platform="ios" />
-    <icon src="img/icons/html5-144.png" width="144" height="144" gap:platform="ios" />
-    <icon src="img/icons/html5-512.png" width="512" height="512" gap:platform="ios" />
-    
-    <gap:splash src="img/screens/ios/iphone_landscape.png" width="480"  height="320"  gap:platform="ios" />
-    <gap:splash src="img/screens/ios/iphone-portrait.png" width="320"  height="480"  gap:platform="ios" />
-    <!--<gap:splash src="img/screen/iphone_retina_landscape.png" width="960"  height="640"  gap:platform="ios" />
-    <gap:splash src="img/screens/iphone_retina_portrait.png" width="640"  height="960"  gap:platform="ios" />
-    <gap:splash src="img/screens/ipad_landscape.png" width="1024" height="748"  gap:platform="ios" />
-    <gap:splash src="img/screens/ipad_portrait.png" width="768"  height="1004" gap:platform="ios" />
-    <gap:splash src="img/screens/ipad_retina_landscape.png" width="2048" height="1496" gap:platform="ios" />
-    <gap:splash src="v/screens/ipad_retina_portrait.png" width="1536" height="2008" gap:platform="ios" />-->
 
-    <feature name="http://api.phonegap.com/1.0/device" />
+  <icon src="img/icons/html5-16.png" width="16" height="16"  gap:platform="ios" />
+  <icon src="img/icons/html5-24.png" width="24" height="24"  gap:platform="ios" />
+  <icon src="img/icons/html5-57.png" width="57" height="57"  gap:platform="ios" />
+  <icon src="img/icons/html5-72.png" width="72" height="72" gap:platform="ios" gap:role="default" />
+  <icon src="img/icons/html5-96.png" width="96" height="96" gap:platform="ios" />
+  <icon src="img/icons/html5-114.png" width="114" height="114" gap:platform="ios" />
+  <icon src="img/icons/html5-144.png" width="144" height="144" gap:platform="ios" />
+  <icon src="img/icons/html5-512.png" width="512" height="512" gap:platform="ios" />
+    
+  <gap:splash src="img/screens/ios/iphone_landscape.png" width="480"  height="320"  gap:platform="ios" />
+  <gap:splash src="img/screens/ios/iphone-portrait.png" width="320"  height="480"  gap:platform="ios" />
 
-    <preference name="phonegap-version" value="2.3.0" />
-    <preference name="orientation" value="portrait" />
-    <preference name="target-device" value="universal" />
-    <preference name="fullscreen" value="true" />
-    <preference name="webviewbounce" value="false" />
-    <preference name="prerendered-icon" value="false" />
-    <preference name="detect-data-types" value="true" />
-    <preference name="exit-on-suspend" value="true" />
-    <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="stay-in-webview" value="false" />
+  <feature name="http://api.phonegap.com/1.0/device" />
+
+  <preference name="phonegap-version" value="2.3.0" />
+  <preference name="orientation" value="portrait" />
+  <preference name="target-device" value="universal" />
+  <preference name="fullscreen" value="true" />
+  <preference name="webviewbounce" value="false" />
+  <preference name="prerendered-icon" value="false" />
+  <preference name="detect-data-types" value="true" />
+  <preference name="exit-on-suspend" value="true" />
+  <preference name="show-splash-screen-spinner" value="true" />
+  <preference name="stay-in-webview" value="false" />
 </widget>
