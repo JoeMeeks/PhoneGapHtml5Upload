@@ -15,9 +15,6 @@
   <icon src="img/icons/html5-114.png" width="114" height="114" gap:platform="ios" />
   <icon src="img/icons/html5-144.png" width="144" height="144" gap:platform="ios" />
   <icon src="img/icons/html5-512.png" width="512" height="512" gap:platform="ios" />
-    
-  <gap:splash src="img/screens/ios/iphone_landscape.png" width="480"  height="320"  gap:platform="ios" />
-  <gap:splash src="img/screens/ios/iphone-portrait.png" width="320"  height="480"  gap:platform="ios" />
 
   <feature name="http://api.phonegap.com/1.0/device" />
   <feature name="http://api.phonegap.com/1.0/file" />
@@ -30,6 +27,5 @@
   <preference name="prerendered-icon" value="false" />
   <preference name="detect-data-types" value="true" />
   <preference name="exit-on-suspend" value="true" />
-  <preference name="show-splash-screen-spinner" value="true" />
   <preference name="stay-in-webview" value="false" />
 </widget>
